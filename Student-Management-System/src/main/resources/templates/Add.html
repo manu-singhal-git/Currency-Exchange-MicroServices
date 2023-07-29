@@ -1,0 +1,24 @@
+<!Doctype html>
+
+<html xmlns:th="http://thymeleaf.org">
+
+<head >
+    <title>User Add Data</title>
+</head>
+
+
+
+<h1>Please Create new data:</h1>
+
+<form method="post" th:object="${data}">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName"/>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName"/>
+    <label for="courseEnrolled">Course Enrolled:</label>
+    <input type="text" id="courseEnrolled" name="courseEnrolled"/>
+
+    <input type="submit" value="Create"/>
+</form>
+
+</html>

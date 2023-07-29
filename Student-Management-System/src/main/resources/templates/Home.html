@@ -1,0 +1,49 @@
+<!Doctype html>
+
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Spring MVC Application</title>
+    <style>
+        table,th,td{border:1px solid blue;
+
+        }
+    </style>
+</head>
+<body>
+<h1 style="color:blue; text-align:center;" >Details of Student</h1>
+<form th:action="@{/adddata}" >
+    <input type="submit" value="Add Data" style="background-color:green">
+</form>
+<main id="data">
+    <table align="center">
+        <tr>
+
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Course Enrolled</th>
+        <th>Operation</th></tr>
+    <post th:each="p : ${data}">
+        <tr>
+
+        <td th:text="${p.firstName}"></td>
+        <td th:text="${p.lastName}"></td>
+        <td th:text="${p.courseEnrolled}"></td>
+            <td>
+
+               <span><a th:href="@{/updatedata(dataId=${p.id})}">Update</a>
+                <form th:action="@{/deletePost(dataId=${p.id})}" th:method="post">
+
+                    <input type="submit" value="Delete" style="background-color:red">
+
+
+                </form></span>
+
+            </td>
+        </tr>
+
+    </post>
+    </table>
+</main>
+
+</body>
+</html>

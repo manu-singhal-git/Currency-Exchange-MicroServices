@@ -1,0 +1,31 @@
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+    <title>Spring MVC edit</title>
+</head>
+
+
+
+<h1>Edit your data</h1>
+
+<form  th:action="@{/updatedata(dataId=${data.id})}" th:method="post">
+    <div>First Name :</div>
+    <div>
+        <input type="text" name="firstName" size="70" th:value="${data.firstName}"/>
+    </div>
+    <div>Last Name :</div>
+
+  <div>
+        <input type="text" name="lastName" size="70" th:value="${data.lastName}"/>
+    </div>
+
+    <div> Course Enrolled :</div>
+    <div>
+        <input type="text" name="courseEnrolled" size="70" th:value="${data.courseEnrolled}"/>
+    </div>
+
+    <input type="submit" value="Submit"/>
+
+</form>
+
+</html>
